@@ -14,7 +14,7 @@
             color: #333;
         }
 
-        .container { 
+        .container {
             max-width: 1400px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.95);
@@ -33,9 +33,53 @@
 
         .conversion-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             margin-bottom: 40px;
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+
+            .container {
+                padding: 20px;
+                border-radius: 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+                margin-bottom: 30px;
+            }
+
+            .conversion-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                margin: 5px;
+            }
+
+            .container {
+                padding: 15px;
+                border-radius: 10px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 25px;
+            }
+
+            .conversion-grid {
+                gap: 15px;
+                margin-bottom: 25px;
+            }
         }
 
         .conversion-card {
@@ -47,6 +91,21 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+        }
+
+        /* Mobile responsive cards */
+        @media (max-width: 768px) {
+            .conversion-card {
+                padding: 20px;
+                border-radius: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .conversion-card {
+                padding: 15px;
+                border-radius: 10px;
+            }
         }
 
         .conversion-card::before {
@@ -74,6 +133,23 @@
             padding: 10px;
             background: linear-gradient(45deg, #f8f9fa, #e9ecef);
             border-radius: 8px;
+        }
+
+        /* Mobile responsive title */
+        @media (max-width: 768px) {
+            .conversion-title {
+                font-size: 1.3em;
+                padding: 8px;
+                margin-bottom: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .conversion-title {
+                font-size: 1.2em;
+                padding: 6px;
+                margin-bottom: 10px;
+            }
         }
 
         .method {
@@ -114,6 +190,23 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
         }
 
+        /* Mobile responsive reference table */
+        @media (max-width: 768px) {
+            .reference-table {
+                margin-top: 30px;
+                padding: 20px;
+                border-radius: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .reference-table {
+                margin-top: 25px;
+                padding: 15px;
+                border-radius: 10px;
+            }
+        }
+
         .reference-title {
             font-size: 1.8em;
             font-weight: bold;
@@ -122,10 +215,51 @@
             text-align: center;
         }
 
+        /* Mobile responsive reference title */
+        @media (max-width: 768px) {
+            .reference-title {
+                font-size: 1.6em;
+                margin-bottom: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .reference-title {
+                font-size: 1.4em;
+                margin-bottom: 15px;
+            }
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
+            overflow-x: auto;
+            display: block;
+            white-space: nowrap;
+        }
+
+        /* Mobile responsive tables */
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.9em;
+                margin-top: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            table {
+                font-size: 0.8em;
+                margin-top: 10px;
+            }
+        }
+
+        table thead,
+        table tbody,
+        table tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
         }
 
         th,
@@ -133,6 +267,26 @@
             padding: 12px;
             text-align: center;
             border: 1px solid #ddd;
+            word-wrap: break-word;
+        }
+
+        /* Mobile responsive table cells */
+        @media (max-width: 768px) {
+
+            th,
+            td {
+                padding: 8px 4px;
+                font-size: 0.85em;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            th,
+            td {
+                padding: 6px 2px;
+                font-size: 0.75em;
+            }
         }
 
         th {
@@ -511,7 +665,7 @@
             </table>
 
             <div class="note">
-                <strong>PRO TIPS:</strong><br>
+                <strong> Pro Tips:</strong><br>
                 • For Binary ↔ Hex: Group by 4 bits<br>
                 • For Binary ↔ Octal: Group by 3 bits<br>
                 • Always pad with leading zeros when grouping<br>
